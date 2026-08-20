@@ -1,0 +1,743 @@
+<!-- Indica al navegador que este documento usa HTML5 -->
+<!DOCTYPE html>
+
+<!-- Inicio del documento HTML y define que el idioma principal es español -->
+<html lang="es">
+
+<head>
+
+  <!-- Permite usar correctamente tildes, ñ y caracteres especiales -->
+  <meta charset="UTF-8">
+
+  <!-- Hace que la página se adapte correctamente a celulares y tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título que aparecerá en la pestaña del navegador -->
+  <title>Asignaciones - Ayuda Mayor</title>
+
+  <!-- Conecta esta página con nuestro archivo CSS principal -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <!--
+    Contenedor principal de toda la página.
+    Dentro tendremos:
+    1. Sidebar lateral
+    2. Contenido principal
+  -->
+  <div class="contenedor-principal">
+
+
+    <!-- ============================= -->
+    <!-- MENÚ LATERAL / SIDEBAR -->
+    <!-- ============================= -->
+
+    <aside class="sidebar">
+
+      <!-- Logo y nombre del sistema -->
+      <div class="logo">
+
+        <!-- Icono provisional del logo -->
+        <div class="logo-icono">
+          ♡
+        </div>
+
+        <!-- Nombre y descripción de la plataforma -->
+        <div>
+
+          <h2>
+            Ayuda Mayor
+          </h2>
+
+          <p>
+            Plataforma comunitaria
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Menú principal de navegación -->
+      <nav class="menu">
+
+
+        <!-- Enlace para volver al dashboard principal -->
+        <a
+          href="dashboard.html"
+          class="menu-item"
+        >
+
+          <span>
+            ⌂
+          </span>
+
+          Inicio
+
+        </a>
+
+
+        <!-- Enlace al módulo de adultos mayores -->
+        <a
+          href="adultos.html"
+          class="menu-item"
+        >
+
+          <span>
+            ♙
+          </span>
+
+          Adultos Mayores
+
+        </a>
+
+
+        <!-- Enlace al módulo de solicitudes -->
+        <a
+          href="solicitudes.html"
+          class="menu-item"
+        >
+
+          <span>
+            ▣
+          </span>
+
+          Solicitudes
+
+        </a>
+
+
+        <!--
+          Enlace a la página actual.
+          La clase "activo" sirve para marcar visualmente
+          que estamos dentro de Asignaciones.
+        -->
+        <a
+          href="asignaciones.html"
+          class="menu-item activo"
+        >
+
+          <span>
+            🔗
+          </span>
+
+          Asignaciones
+
+        </a>
+
+
+        <!-- Enlace al módulo de voluntarios -->
+        <a
+          href="voluntarios.html"
+          class="menu-item"
+        >
+
+          <span>
+            ♧
+          </span>
+
+          Voluntarios
+
+        </a>
+
+
+        <!-- Enlace futuro al módulo de visitas -->
+        <a
+          href="visitas.html"
+          class="menu-item"
+        >
+
+          <span>
+            ✓
+          </span>
+
+          Visitas y Entregas
+
+        </a>
+
+
+        <!-- Enlace futuro al módulo de reportes -->
+        <a
+          href="reportes.html"
+          class="menu-item"
+        >
+
+          <span>
+            ▥
+          </span>
+
+          Reportes
+
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ============================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ============================= -->
+
+    <main class="contenido">
+
+
+      <!--
+        Cabecera superior de la página.
+        Muestra el nombre del módulo y un botón para volver.
+      -->
+      <header class="header">
+
+
+        <!-- Título pequeño del módulo -->
+        <h3>
+          Asignaciones
+        </h3>
+
+
+        <!-- Botón para volver al dashboard -->
+        <a
+          href="dashboard.html"
+          class="boton-secundario"
+        >
+
+          Volver al panel
+
+        </a>
+
+      </header>
+
+
+      <!--
+        Contenedor donde irá todo el contenido
+        específico del módulo Asignaciones.
+      -->
+      <section class="pagina-contenido">
+
+
+        <!-- ============================= -->
+        <!-- ENCABEZADO DEL MÓDULO -->
+        <!-- ============================= -->
+
+        <div class="encabezado-pagina">
+
+
+          <!-- Título y explicación de esta sección -->
+          <div>
+
+            <h1>
+              Asignación de solicitudes
+            </h1>
+
+            <p>
+              Asigna voluntarios disponibles a las solicitudes
+              de ayuda registradas.
+            </p>
+
+          </div>
+
+
+          <!--
+            Botón que después controlaremos con JavaScript.
+            Al hacer clic mostrará el formulario de asignación.
+          -->
+          <button
+            id="btnNuevaAsignacion"
+            class="boton-principal"
+          >
+
+            + Nueva asignación
+
+          </button>
+
+        </div>
+
+
+        <!-- ============================= -->
+        <!-- FORMULARIO DE ASIGNACIÓN -->
+        <!-- ============================= -->
+
+        <!--
+          Este formulario comienza oculto gracias a la clase "oculto".
+
+          Después JavaScript quitará esa clase cuando el usuario
+          presione "+ Nueva asignación".
+        -->
+        <section
+          id="contenedorFormularioAsignacion"
+          class="panel formulario-adulto oculto"
+        >
+
+
+          <!-- Título interno del formulario -->
+          <div class="titulo-panel">
+
+            <h2>
+              Nueva asignación
+            </h2>
+
+          </div>
+
+
+          <!--
+            Formulario principal.
+
+            JavaScript escuchará el evento "submit"
+            para guardar los datos.
+          -->
+          <form id="formAsignacion">
+
+
+            <!--
+              Grid que organiza los campos en columnas
+              usando estilos definidos en style.css.
+            -->
+            <div class="form-grid">
+
+
+              <!-- ============================= -->
+              <!-- SOLICITUD -->
+              <!-- ============================= -->
+
+              <div class="campo">
+
+
+                <!-- Nombre visible del campo -->
+                <label for="solicitudAsignacion">
+
+                  Solicitud
+
+                </label>
+
+
+                <!--
+                  Selector donde aparecerán las solicitudes
+                  guardadas previamente.
+
+                  JavaScript llenará estas opciones automáticamente.
+                -->
+                <select
+                  id="solicitudAsignacion"
+                  required
+                >
+
+
+                  <!--
+                    Opción inicial.
+                    Tiene value vacío para obligar al usuario
+                    a seleccionar una solicitud real.
+                  -->
+                  <option value="">
+
+                    Seleccione una solicitud
+
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ============================= -->
+              <!-- VOLUNTARIO -->
+              <!-- ============================= -->
+
+              <div class="campo">
+
+
+                <!-- Etiqueta del selector de voluntarios -->
+                <label for="voluntarioAsignacion">
+
+                  Voluntario
+
+                </label>
+
+
+                <!--
+                  Selector que después se llenará
+                  con los voluntarios registrados.
+                -->
+                <select
+                  id="voluntarioAsignacion"
+                  required
+                >
+
+                  <option value="">
+
+                    Seleccione un voluntario
+
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ============================= -->
+              <!-- FECHA -->
+              <!-- ============================= -->
+
+              <div class="campo">
+
+
+                <!-- Etiqueta del campo fecha -->
+                <label for="fechaAsignacion">
+
+                  Fecha programada
+
+                </label>
+
+
+                <!--
+                  Input tipo date.
+
+                  El navegador mostrará un calendario
+                  para seleccionar una fecha.
+                -->
+                <input
+                  type="date"
+                  id="fechaAsignacion"
+                  required
+                >
+
+              </div>
+
+
+              <!-- ============================= -->
+              <!-- HORA -->
+              <!-- ============================= -->
+
+              <div class="campo">
+
+
+                <!-- Etiqueta del campo hora -->
+                <label for="horaAsignacion">
+
+                  Hora
+
+                </label>
+
+
+                <!--
+                  Input tipo time.
+
+                  Permite seleccionar una hora.
+                -->
+                <input
+                  type="time"
+                  id="horaAsignacion"
+                  required
+                >
+
+              </div>
+
+
+              <!-- ============================= -->
+              <!-- ESTADO DE LA ASIGNACIÓN -->
+              <!-- ============================= -->
+
+              <div class="campo">
+
+
+                <!-- Etiqueta del estado -->
+                <label for="estadoAsignacion">
+
+                  Estado
+
+                </label>
+
+
+                <!--
+                  Selector del estado actual de la asignación.
+
+                  Esto servirá para representar el avance
+                  del trabajo del voluntario.
+                -->
+                <select
+                  id="estadoAsignacion"
+                  required
+                >
+
+
+                  <!--
+                    Estado inicial.
+                    Significa que la solicitud ya fue asignada
+                    a un voluntario.
+                  -->
+                  <option value="Asignada">
+
+                    Asignada
+
+                  </option>
+
+
+                  <!--
+                    Indica que el voluntario aceptó
+                    hacerse cargo.
+                  -->
+                  <option value="Aceptada">
+
+                    Aceptada
+
+                  </option>
+
+
+                  <!--
+                    Indica que el voluntario rechazó
+                    la asignación.
+                  -->
+                  <option value="Rechazada">
+
+                    Rechazada
+
+                  </option>
+
+
+                  <!--
+                    Indica que el voluntario ya está
+                    trabajando en la solicitud.
+                  -->
+                  <option value="En proceso">
+
+                    En proceso
+
+                  </option>
+
+
+                  <!--
+                    Indica que la asignación terminó.
+                  -->
+                  <option value="Completada">
+
+                    Completada
+
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ============================= -->
+              <!-- OBSERVACIONES -->
+              <!-- ============================= -->
+
+              <!--
+                campo-completo hace que este campo
+                ocupe todo el ancho del formulario.
+              -->
+              <div class="campo campo-completo">
+
+
+                <!-- Etiqueta de observaciones -->
+                <label for="observacionesAsignacion">
+
+                  Observaciones
+
+                </label>
+
+
+                <!--
+                  Área de texto para agregar instrucciones
+                  o información importante para el voluntario.
+                -->
+                <textarea
+                  id="observacionesAsignacion"
+                  rows="3"
+                  placeholder="Indicaciones para el voluntario..."
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <!-- ============================= -->
+            <!-- BOTONES DEL FORMULARIO -->
+            <!-- ============================= -->
+
+            <div class="botones-formulario">
+
+
+              <!--
+                type="button" evita que este botón
+                intente enviar el formulario.
+
+                JavaScript lo usará para cerrar
+                el formulario.
+              -->
+              <button
+                type="button"
+                id="btnCancelarAsignacion"
+                class="boton-cancelar"
+              >
+
+                Cancelar
+
+              </button>
+
+
+              <!--
+                type="submit" hace que este botón
+                intente enviar el formulario.
+
+                JavaScript interceptará ese evento
+                para guardar la asignación.
+              -->
+              <button
+                type="submit"
+                class="boton-principal"
+              >
+
+                Guardar asignación
+
+              </button>
+
+            </div>
+
+          </form>
+
+        </section>
+
+
+        <!-- ============================= -->
+        <!-- LISTADO DE ASIGNACIONES -->
+        <!-- ============================= -->
+
+        <section class="panel">
+
+
+          <!-- Encabezado de la tabla -->
+          <div class="titulo-panel">
+
+
+            <!-- Título del listado -->
+            <h2>
+
+              Asignaciones registradas
+
+            </h2>
+
+
+            <!--
+              Contador.
+
+              JavaScript cambiará este texto
+              dependiendo de cuántas asignaciones existan.
+            -->
+            <span id="cantidadAsignaciones">
+
+              0 asignaciones
+
+            </span>
+
+          </div>
+
+
+          <!--
+            Permite que la tabla tenga desplazamiento horizontal
+            en pantallas pequeñas.
+          -->
+          <div class="tabla-responsive">
+
+
+            <!-- Inicio de la tabla -->
+            <table>
+
+
+              <!-- Encabezados -->
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Adulto Mayor
+                  </th>
+
+                  <th>
+                    Ayuda
+                  </th>
+
+                  <th>
+                    Voluntario
+                  </th>
+
+                  <th>
+                    Fecha
+                  </th>
+
+                  <th>
+                    Hora
+                  </th>
+
+                  <th>
+                    Estado
+                  </th>
+
+                  <th>
+                    Acciones
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <!--
+                tbody es la zona donde JavaScript
+                agregará las asignaciones.
+
+                Por eso tiene un ID.
+              -->
+              <tbody id="tablaAsignaciones">
+
+
+                <!--
+                  Mensaje provisional mostrado
+                  mientras todavía no existen registros.
+                -->
+                <tr>
+
+                  <td colspan="7">
+
+                    No hay asignaciones registradas.
+
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!--
+    Carga el JavaScript específico de Asignaciones.
+
+    Ese archivo será el encargado de:
+    - leer solicitudes;
+    - leer voluntarios;
+    - guardar asignaciones;
+    - editar;
+    - eliminar;
+    - cambiar estados.
+  -->
+  <script src="js/asignaciones.js"></script>
+
+
+</body>
+
+</html>

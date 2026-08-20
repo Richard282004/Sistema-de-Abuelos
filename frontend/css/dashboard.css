@@ -1,0 +1,525 @@
+/* ======================================================
+   DASHBOARD.CSS
+   Estilos exclusivos del panel principal.
+
+   style.css seguirá teniendo los estilos generales:
+   botones, sidebar, tablas, tipografía, etc.
+
+   Aquí dejamos principalmente la distribución
+   específica del Dashboard.
+   ====================================================== */
+
+
+/* ======================================================
+   SECCIÓN DE BIENVENIDA
+   ====================================================== */
+
+/*
+  Organiza el mensaje de bienvenida y
+  el botón "Nueva solicitud".
+*/
+.bienvenida {
+
+  /* Separa ambos elementos horizontalmente */
+  display: flex;
+
+  /* Uno queda a la izquierda y otro a la derecha */
+  justify-content: space-between;
+
+  /* Los alinea verticalmente */
+  align-items: center;
+
+  /* Espacio interior */
+  padding: 35px;
+
+}
+
+
+/* Título principal del Dashboard */
+.bienvenida h1 {
+
+  /* Tamaño del título */
+  font-size: 30px;
+
+  /* Separación del texto inferior */
+  margin-bottom: 8px;
+
+}
+
+
+/* Texto secundario */
+.bienvenida p {
+
+  /* Color más suave */
+  color: #6b6e7c;
+
+}
+
+
+/* ======================================================
+   TARJETAS DE RESUMEN
+   ====================================================== */
+
+/*
+  Contenedor que agrupa:
+
+  - Solicitudes pendientes
+  - En proceso
+  - Resueltas
+  - Voluntarios activos
+*/
+.tarjetas {
+
+  /* Espaciado exterior */
+  padding: 0 35px 25px;
+
+  /* Utilizamos CSS Grid */
+  display: grid;
+
+  /* Creamos cuatro columnas iguales */
+  grid-template-columns: repeat(4, 1fr);
+
+  /* Separación entre tarjetas */
+  gap: 20px;
+
+}
+
+
+/* Cada tarjeta individual */
+.tarjeta {
+
+  /* Altura mínima */
+  min-height: 150px;
+
+  /* Espacio interior */
+  padding: 22px;
+
+  /* Fondo blanco */
+  background: white;
+
+  /* Borde suave */
+  border: 1px solid #e9e9ee;
+
+  /* Bordes redondeados */
+  border-radius: 15px;
+
+  /* Coloca icono y texto horizontalmente */
+  display: flex;
+
+  /* Separación */
+  gap: 18px;
+
+  /* Alineación superior */
+  align-items: flex-start;
+
+  /* Sombra suave */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.04);
+
+}
+
+
+/* Número principal de cada tarjeta */
+.tarjeta h2 {
+
+  font-size: 30px;
+
+  margin-bottom: 4px;
+
+}
+
+
+/* Descripción de la tarjeta */
+.tarjeta p {
+
+  color: #555;
+
+  margin-bottom: 20px;
+
+}
+
+
+/* Enlace "Ver detalles" */
+.tarjeta a {
+
+  color: #7040d7;
+
+  font-size: 13px;
+
+}
+
+
+/* ======================================================
+   ICONOS DE LAS TARJETAS
+   ====================================================== */
+
+.icono-tarjeta {
+
+  /* Tamaño del recuadro */
+  width: 55px;
+  height: 55px;
+
+  /* Bordes redondeados */
+  border-radius: 13px;
+
+  /* Centramos el icono */
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  /* Tamaño del símbolo */
+  font-size: 25px;
+
+}
+
+
+/* Fondo violeta */
+.morado {
+
+  background: #eee5ff;
+
+  color: #7c4de0;
+
+}
+
+
+/* Fondo amarillo */
+.amarillo {
+
+  background: #fff0c7;
+
+  color: #d99500;
+
+}
+
+
+/* Fondo verde */
+.verde {
+
+  background: #e3f8e7;
+
+  color: #2a9a41;
+
+}
+
+
+/* Fondo azul */
+.azul {
+
+  background: #e4efff;
+
+  color: #2867bf;
+
+}
+
+
+/* ======================================================
+   ZONA CENTRAL DEL DASHBOARD
+   ====================================================== */
+
+/*
+  Aquí estarán:
+
+  Solicitudes recientes | Próximas visitas
+*/
+.grid-dashboard {
+
+  /* Espaciado */
+  padding: 0 35px 25px;
+
+  /* Grid para dividir ambas zonas */
+  display: grid;
+
+  /*
+    Solicitudes ocupa aproximadamente
+    dos tercios y visitas un tercio.
+  */
+  grid-template-columns: 2fr 1fr;
+
+  /* Separación entre ambos paneles */
+  gap: 20px;
+
+}
+
+
+/* ======================================================
+   PRÓXIMAS VISITAS
+   ====================================================== */
+
+/* Cada visita individual */
+.visita {
+
+  /* Coloca avatar + información + estado en línea */
+  display: flex;
+
+  /* Alineación vertical */
+  align-items: center;
+
+  /* Separación */
+  gap: 12px;
+
+  /* Espacio interno vertical */
+  padding: 16px 0;
+
+  /* Línea divisoria */
+  border-bottom: 1px solid #eee;
+
+}
+
+
+/* Última visita sin línea inferior */
+.visita:last-child {
+
+  border-bottom: none;
+
+}
+
+
+/* Avatar con iniciales del adulto mayor */
+.avatar-adulto {
+
+  width: 45px;
+
+  height: 45px;
+
+  /* Fondo violeta suave */
+  background: #eee7ff;
+
+  color: #7645dc;
+
+  /* Lo convierte en círculo */
+  border-radius: 50%;
+
+  /* Centra las iniciales */
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-weight: bold;
+
+  /* Evita que el avatar se achique */
+  flex-shrink: 0;
+
+}
+
+
+/* Información principal de la visita */
+.info-visita {
+
+  /*
+    Ocupa todo el espacio disponible
+    entre el avatar y el estado.
+  */
+  flex: 1;
+
+}
+
+
+/* Fecha/hora */
+.info-visita strong {
+
+  font-size: 12px;
+
+}
+
+
+/* Nombre del adulto */
+.info-visita h4 {
+
+  margin: 5px 0;
+
+}
+
+
+/* Descripción y ubicación */
+.info-visita p,
+.info-visita small {
+
+  color: #777;
+
+  font-size: 12px;
+
+}
+
+
+/* ======================================================
+   ACCIONES RÁPIDAS
+   ====================================================== */
+
+/* Panel inferior */
+.acciones {
+
+  /* Margen exterior */
+  margin: 0 35px 35px;
+
+}
+
+
+/* Distribuye los accesos rápidos */
+.acciones-grid {
+
+  display: grid;
+
+  /* Cinco botones por fila */
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 15px;
+
+}
+
+
+/* Cada acción rápida */
+.accion {
+
+  text-align: center;
+
+  padding: 15px;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  border-radius: 10px;
+
+  /* Animación suave */
+  transition: 0.2s;
+
+}
+
+
+/* Efecto cuando pasamos el mouse */
+.accion:hover {
+
+  background: #f7f3ff;
+
+  /* La mueve levemente hacia arriba */
+  transform: translateY(-2px);
+
+}
+
+
+/* Icono de cada acción rápida */
+.accion div {
+
+  width: 50px;
+
+  height: 50px;
+
+  background: #eee7ff;
+
+  color: #7543d8;
+
+  /* Lo centra */
+  margin: 0 auto 10px;
+
+  border-radius: 12px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 24px;
+
+}
+
+
+/* ======================================================
+   RESPONSIVE - TABLETS
+   ====================================================== */
+
+/*
+  Cuando la pantalla es menor a 1100px,
+  reorganizamos algunos elementos.
+*/
+@media (max-width: 1100px) {
+
+  /* Las cuatro tarjetas pasan a dos columnas */
+  .tarjetas {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+  /* Solicitudes y visitas pasan una debajo de otra */
+  .grid-dashboard {
+
+    grid-template-columns: 1fr;
+
+  }
+
+
+  /* Acciones rápidas pasan a tres columnas */
+  .acciones-grid {
+
+    grid-template-columns: repeat(3, 1fr);
+
+  }
+
+}
+
+
+/* ======================================================
+   RESPONSIVE - CELULARES
+   ====================================================== */
+
+@media (max-width: 750px) {
+
+  /* Bienvenida pasa a formato vertical */
+  .bienvenida {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    padding: 25px 20px;
+
+  }
+
+
+  /* Una tarjeta por fila */
+  .tarjetas {
+
+    grid-template-columns: 1fr;
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+  }
+
+
+  /* Ajustamos los paneles centrales */
+  .grid-dashboard {
+
+    padding-left: 20px;
+
+    padding-right: 20px;
+
+  }
+
+
+  /* Acciones rápidas en dos columnas */
+  .acciones-grid {
+
+    grid-template-columns: repeat(2, 1fr);
+
+  }
+
+
+  .acciones {
+
+    margin-left: 20px;
+
+    margin-right: 20px;
+
+  }
+
+}

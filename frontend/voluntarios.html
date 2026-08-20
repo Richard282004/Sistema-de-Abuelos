@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Voluntarios - Ayuda Mayor</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="contenedor-principal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+        <div class="logo-icono">♡</div>
+
+        <div>
+          <h2>Ayuda Mayor</h2>
+          <p>Plataforma comunitaria</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+
+        <a href="dashboard.html" class="menu-item">
+          <span>⌂</span>
+          Inicio
+        </a>
+
+        <a href="adultos.html" class="menu-item">
+          <span>♙</span>
+          Adultos Mayores
+        </a>
+
+        <a href="solicitudes.html" class="menu-item">
+          <span>▣</span>
+          Solicitudes
+        </a>
+
+        <a href="asignaciones.html" class="menu-item">
+          <span>🔗</span>
+          Asignaciones
+        </a>
+
+        <a href="voluntarios.html" class="menu-item activo">
+          <span>♧</span>
+          Voluntarios
+        </a>
+
+        <a href="visitas.html" class="menu-item">
+          <span>✓</span>
+          Visitas y Entregas
+        </a>
+
+        <a href="reportes.html" class="menu-item">
+          <span>▥</span>
+          Reportes
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- CONTENIDO -->
+    <main class="contenido">
+
+      <header class="header">
+
+        <h3>Voluntarios</h3>
+
+        <a href="dashboard.html" class="boton-secundario">
+          Volver al panel
+        </a>
+
+      </header>
+
+
+      <section class="pagina-contenido">
+
+        <!-- ENCABEZADO -->
+        <div class="encabezado-pagina">
+
+          <div>
+
+            <h1>Voluntarios registrados</h1>
+
+            <p>
+              Administra las personas disponibles para apoyar
+              las solicitudes de la comunidad.
+            </p>
+
+          </div>
+
+          <button
+            id="btnNuevoVoluntario"
+            class="boton-principal"
+          >
+            + Registrar voluntario
+          </button>
+
+        </div>
+
+
+        <!-- FORMULARIO -->
+        <section
+          id="contenedorFormularioVoluntario"
+          class="panel formulario-adulto oculto"
+        >
+
+          <div class="titulo-panel">
+            <h2>Registrar voluntario</h2>
+          </div>
+
+
+          <form id="formVoluntario">
+
+            <div class="form-grid">
+
+              <!-- NOMBRE -->
+              <div class="campo">
+
+                <label for="nombreVoluntario">
+                  Nombre
+                </label>
+
+                <input
+                  type="text"
+                  id="nombreVoluntario"
+                  required
+                >
+
+              </div>
+
+
+              <!-- APELLIDO -->
+              <div class="campo">
+
+                <label for="apellidoVoluntario">
+                  Apellido
+                </label>
+
+                <input
+                  type="text"
+                  id="apellidoVoluntario"
+                  required
+                >
+
+              </div>
+
+
+              <!-- RUT -->
+              <div class="campo">
+
+                <label for="rutVoluntario">
+                  RUT
+                </label>
+
+                <input
+                  type="text"
+                  id="rutVoluntario"
+                  placeholder="12.345.678-9"
+                  required
+                >
+
+              </div>
+
+
+              <!-- TELÉFONO -->
+              <div class="campo">
+
+                <label for="telefonoVoluntario">
+                  Teléfono
+                </label>
+
+                <input
+                  type="text"
+                  id="telefonoVoluntario"
+                  required
+                >
+
+              </div>
+
+
+              <!-- CORREO -->
+              <div class="campo">
+
+                <label for="correoVoluntario">
+                  Correo electrónico
+                </label>
+
+                <input
+                  type="email"
+                  id="correoVoluntario"
+                  placeholder="voluntario@correo.cl"
+                  required
+                >
+
+              </div>
+
+
+              <!-- COMUNA -->
+              <div class="campo">
+
+                <label for="comunaVoluntario">
+                  Comuna / Zona
+                </label>
+
+                <input
+                  type="text"
+                  id="comunaVoluntario"
+                  placeholder="Ej: San Ramón"
+                  required
+                >
+
+              </div>
+
+
+              <!-- DISPONIBILIDAD -->
+              <div class="campo">
+
+                <label for="disponibilidadVoluntario">
+                  Disponibilidad
+                </label>
+
+                <select
+                  id="disponibilidadVoluntario"
+                  required
+                >
+
+                  <option value="">
+                    Seleccione disponibilidad
+                  </option>
+
+                  <option value="Mañana">
+                    Mañana
+                  </option>
+
+                  <option value="Tarde">
+                    Tarde
+                  </option>
+
+                  <option value="Todo el día">
+                    Todo el día
+                  </option>
+
+                  <option value="Fin de semana">
+                    Fin de semana
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ESTADO -->
+              <div class="campo">
+
+                <label for="estadoVoluntario">
+                  Estado
+                </label>
+
+                <select
+                  id="estadoVoluntario"
+                  required
+                >
+
+                  <option value="Activo">
+                    Activo
+                  </option>
+
+                  <option value="Inactivo">
+                    Inactivo
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- OBSERVACIONES -->
+              <div class="campo campo-completo">
+
+                <label for="observacionesVoluntario">
+                  Observaciones
+                </label>
+
+                <textarea
+                  id="observacionesVoluntario"
+                  rows="3"
+                  placeholder="Ej: Disponible para acompañamientos y compras."
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="botones-formulario">
+
+              <button
+                type="button"
+                id="btnCancelarVoluntario"
+                class="boton-cancelar"
+              >
+                Cancelar
+              </button>
+
+              <button
+                type="submit"
+                class="boton-principal"
+              >
+                Guardar voluntario
+              </button>
+
+            </div>
+
+          </form>
+
+        </section>
+
+
+        <!-- LISTADO -->
+        <section class="panel">
+
+          <div class="titulo-panel">
+
+            <h2>Listado de voluntarios</h2>
+
+            <span id="cantidadVoluntarios">
+              0 registrados
+            </span>
+
+          </div>
+
+
+          <div class="tabla-responsive">
+
+            <table>
+
+              <thead>
+
+                <tr>
+                  <th>Nombre</th>
+                  <th>RUT</th>
+                  <th>Comuna</th>
+                  <th>Teléfono</th>
+                  <th>Disponibilidad</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody id="tablaVoluntarios">
+
+                <tr>
+
+                  <td colspan="7">
+                    No hay voluntarios registrados.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/voluntarios.js"></script>
+
+</body>
+
+</html>

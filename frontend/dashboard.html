@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda Mayor - Panel de Coordinador</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+
+<body>
+
+  <div class="contenedor-principal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+        <div class="logo-icono">♡</div>
+
+        <div>
+          <h2>Ayuda Mayor</h2>
+          <p>Plataforma comunitaria</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+
+        <a href="dashboard.html" class="menu-item activo">
+          <span>⌂</span>
+          Inicio
+        </a>
+
+        <a href="adultos.html" class="menu-item">
+          <span>♙</span>
+          Adultos Mayores
+        </a>
+
+        <a href="solicitudes.html" class="menu-item">
+          <span>▣</span>
+          Solicitudes
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>🔗</span>
+          Asignaciones
+        </a>
+
+        <a href="voluntarios.html" class="menu-item">
+          <span>♧</span>
+          Voluntarios
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>✓</span>
+          Visitas y Entregas
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>▥</span>
+          Reportes
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>⚙</span>
+          Configuración
+        </a>
+
+      </nav>
+
+      <div class="mensaje-ayuda">
+        <div class="emoji-mayores">👵 👴</div>
+
+        <h3>Estamos para ayudar</h3>
+
+        <p>
+          Juntos construimos una comunidad más solidaria.
+        </p>
+
+        <span>♥</span>
+      </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO -->
+    <main class="contenido">
+
+      <!-- HEADER -->
+      <header class="header">
+
+        <div>
+          <h3>Panel de Coordinador</h3>
+        </div>
+
+        <div class="usuario">
+          <div class="campana">
+            🔔
+            <span>3</span>
+          </div>
+
+          <div class="avatar">
+            MG
+          </div>
+
+          <div>
+            <strong>María González</strong>
+            <p>Coordinador</p>
+          </div>
+        </div>
+
+      </header>
+
+
+      <!-- BIENVENIDA -->
+      <section class="bienvenida">
+
+        <div>
+          <h1>¡Bienvenida, María! 👋</h1>
+
+          <p>
+            Aquí puedes gestionar y dar seguimiento a todas las solicitudes de ayuda.
+          </p>
+        </div>
+
+        <a href="solicitudes.html" class="boton-principal">
+          + Nueva solicitud
+        </a>
+
+      </section>
+
+
+      <!-- TARJETAS -->
+      <section class="tarjetas">
+
+        <div class="tarjeta">
+          <div class="icono-tarjeta morado">▣</div>
+
+          <div>
+            <h2>24</h2>
+            <p>Solicitudes pendientes</p>
+
+            <a href="#">
+              Ver detalles →
+            </a>
+          </div>
+        </div>
+
+
+        <div class="tarjeta">
+          <div class="icono-tarjeta amarillo">◷</div>
+
+          <div>
+            <h2>12</h2>
+            <p>Solicitudes en proceso</p>
+
+            <a href="#">
+              Ver detalles →
+            </a>
+          </div>
+        </div>
+
+
+        <div class="tarjeta">
+          <div class="icono-tarjeta verde">✓</div>
+
+          <div>
+            <h2>38</h2>
+            <p>Solicitudes resueltas</p>
+
+            <a href="#">
+              Ver detalles →
+            </a>
+          </div>
+        </div>
+
+
+        <div class="tarjeta">
+          <div class="icono-tarjeta azul">♧</div>
+
+          <div>
+            <h2>56</h2>
+            <p>Voluntarios activos</p>
+
+            <a href="#">
+              Ver detalles →
+            </a>
+          </div>
+        </div>
+
+      </section>
+
+
+      <!-- GRID -->
+      <section class="grid-dashboard">
+
+
+        <!-- SOLICITUDES -->
+        <div class="panel solicitudes-recientes">
+
+          <div class="titulo-panel">
+            <h2>Solicitudes recientes</h2>
+
+            <a href="solicitudes.html">
+              Ver todas
+            </a>
+          </div>
+
+
+          <div class="tabla-responsive">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Adulto Mayor</th>
+                  <th>Categoría</th>
+                  <th>Urgencia</th>
+                  <th>Estado</th>
+                  <th>Fecha</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td>#1024</td>
+
+                  <td>
+                    <strong>Ana María López</strong>
+                    <small>78 años</small>
+                  </td>
+
+                  <td>Medicamentos</td>
+
+                  <td>
+                    <span class="estado urgencia-alta">
+                      Alta
+                    </span>
+                  </td>
+
+                  <td>
+                    <span class="estado proceso">
+                      En proceso
+                    </span>
+                  </td>
+
+                  <td>17/08/2026</td>
+                </tr>
+
+
+                <tr>
+                  <td>#1023</td>
+
+                  <td>
+                    <strong>Luis Ramírez</strong>
+                    <small>82 años</small>
+                  </td>
+
+                  <td>Compras</td>
+
+                  <td>
+                    <span class="estado urgencia-media">
+                      Media
+                    </span>
+                  </td>
+
+                  <td>
+                    <span class="estado asignada">
+                      Asignada
+                    </span>
+                  </td>
+
+                  <td>17/08/2026</td>
+                </tr>
+
+
+                <tr>
+                  <td>#1022</td>
+
+                  <td>
+                    <strong>Elena Silva</strong>
+                    <small>75 años</small>
+                  </td>
+
+                  <td>Trámites</td>
+
+                  <td>
+                    <span class="estado urgencia-baja">
+                      Baja
+                    </span>
+                  </td>
+
+                  <td>
+                    <span class="estado pendiente">
+                      Pendiente
+                    </span>
+                  </td>
+
+                  <td>16/08/2026</td>
+                </tr>
+
+
+                <tr>
+                  <td>#1021</td>
+
+                  <td>
+                    <strong>Manuel Ortiz</strong>
+                    <small>80 años</small>
+                  </td>
+
+                  <td>Acompañamiento</td>
+
+                  <td>
+                    <span class="estado urgencia-alta">
+                      Alta
+                    </span>
+                  </td>
+
+                  <td>
+                    <span class="estado resuelta">
+                      Resuelta
+                    </span>
+                  </td>
+
+                  <td>16/08/2026</td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </div>
+
+
+        <!-- PRÓXIMAS VISITAS -->
+        <div class="panel">
+
+          <div class="titulo-panel">
+            <h2>Próximas visitas</h2>
+          </div>
+
+
+          <div class="visita">
+
+            <div class="avatar-adulto">
+              AL
+            </div>
+
+            <div class="info-visita">
+
+              <strong>
+                Hoy - 15:00
+              </strong>
+
+              <h4>
+                Ana María López
+              </h4>
+
+              <p>
+                Entrega de medicamentos
+              </p>
+
+              <small>
+                📍 San Ramón
+              </small>
+
+            </div>
+
+            <span class="estado programada">
+              Programada
+            </span>
+
+          </div>
+
+
+          <div class="visita">
+
+            <div class="avatar-adulto">
+              LR
+            </div>
+
+            <div class="info-visita">
+
+              <strong>
+                18 agosto - 10:00
+              </strong>
+
+              <h4>
+                Luis Ramírez
+              </h4>
+
+              <p>
+                Compra de alimentos
+              </p>
+
+              <small>
+                📍 La Granja
+              </small>
+
+            </div>
+
+            <span class="estado programada">
+              Programada
+            </span>
+
+          </div>
+
+
+          <div class="visita">
+
+            <div class="avatar-adulto">
+              ES
+            </div>
+
+            <div class="info-visita">
+
+              <strong>
+                19 agosto - 11:30
+              </strong>
+
+              <h4>
+                Elena Silva
+              </h4>
+
+              <p>
+                Acompañamiento a trámite
+              </p>
+
+              <small>
+                📍 San Joaquín
+              </small>
+
+            </div>
+
+            <span class="estado programada">
+              Programada
+            </span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ACCIONES -->
+      <section class="panel acciones">
+
+        <div class="titulo-panel">
+          <h2>Acciones rápidas</h2>
+        </div>
+
+
+        <div class="acciones-grid">
+
+          <a href="adultos.html" class="accion">
+            <div>♙</div>
+            Registrar adulto mayor
+          </a>
+
+
+          <a href="solicitudes.html" class="accion">
+            <div>＋</div>
+            Nueva solicitud
+          </a>
+
+
+          <a href="voluntarios.html" class="accion">
+            <div>♧</div>
+            Buscar voluntario
+          </a>
+
+
+          <a href="solicitudes.html" class="accion">
+            <div>▣</div>
+            Ver solicitudes
+          </a>
+
+
+          <a href="reportes.html" class="accion">
+            <div>▥</div>
+            Generar reporte
+          </a>
+
+        </div>
+
+      </section>
+
+
+    </main>
+
+  </div>
+<script src="js/dashboard.js"></script>
+
+</body>
+</html>

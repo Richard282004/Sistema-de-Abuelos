@@ -1,0 +1,383 @@
+<!-- Indica que usamos HTML5 -->
+<!DOCTYPE html>
+
+<!-- Define español como idioma de la página -->
+<html lang="es">
+
+<head>
+
+  <!-- Permite tildes, ñ y caracteres especiales -->
+  <meta charset="UTF-8">
+
+  <!-- Hace la página adaptable a distintas pantallas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título de la pestaña del navegador -->
+  <title>Reportes - Ayuda Mayor</title>
+
+  <!-- Utilizamos el CSS general del proyecto -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Contiene sidebar + contenido principal -->
+  <div class="contenedor-principal">
+
+
+    <!-- ========================================== -->
+    <!-- MENÚ LATERAL -->
+    <!-- ========================================== -->
+
+    <aside class="sidebar">
+
+      <div class="logo">
+
+        <div class="logo-icono">
+          ♡
+        </div>
+
+        <div>
+
+          <h2>Ayuda Mayor</h2>
+
+          <p>
+            Plataforma comunitaria
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Navegación entre los módulos -->
+      <nav class="menu">
+
+        <a href="dashboard.html" class="menu-item">
+          <span>⌂</span>
+          Inicio
+        </a>
+
+        <a href="adultos.html" class="menu-item">
+          <span>♙</span>
+          Adultos Mayores
+        </a>
+
+        <a href="solicitudes.html" class="menu-item">
+          <span>▣</span>
+          Solicitudes
+        </a>
+
+        <a href="asignaciones.html" class="menu-item">
+          <span>🔗</span>
+          Asignaciones
+        </a>
+
+        <a href="voluntarios.html" class="menu-item">
+          <span>♧</span>
+          Voluntarios
+        </a>
+
+        <a href="visitas.html" class="menu-item">
+          <span>✓</span>
+          Visitas y Entregas
+        </a>
+
+        <!-- Estamos actualmente en Reportes -->
+        <a href="reportes.html" class="menu-item activo">
+          <span>▥</span>
+          Reportes
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ========================================== -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ========================================== -->
+
+    <main class="contenido">
+
+      <!-- Cabecera superior -->
+      <header class="header">
+
+        <h3>
+          Reportes
+        </h3>
+
+        <!-- Permite regresar al dashboard -->
+        <a
+          href="dashboard.html"
+          class="boton-secundario"
+        >
+          Volver al panel
+        </a>
+
+      </header>
+
+
+      <section class="pagina-contenido">
+
+
+        <!-- ====================================== -->
+        <!-- TÍTULO -->
+        <!-- ====================================== -->
+
+        <div class="encabezado-pagina">
+
+          <div>
+
+            <h1>
+              Reportes de gestión
+            </h1>
+
+            <p>
+              Resumen general de la actividad
+              de la plataforma comunitaria.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- ====================================== -->
+        <!-- INDICADORES -->
+        <!-- ====================================== -->
+
+        <!--
+          Estos números comenzarán en 0.
+
+          reportes.js posteriormente leerá localStorage
+          y cambiará automáticamente los valores.
+        -->
+        <section class="estadisticas">
+
+
+          <!-- TOTAL ADULTOS -->
+          <div class="tarjeta-estadistica">
+
+            <p>
+              Adultos mayores
+            </p>
+
+            <!-- JS cambiará este número -->
+            <h2 id="reporteAdultos">
+              0
+            </h2>
+
+          </div>
+
+
+          <!-- TOTAL SOLICITUDES -->
+          <div class="tarjeta-estadistica">
+
+            <p>
+              Total solicitudes
+            </p>
+
+            <h2 id="reporteSolicitudes">
+              0
+            </h2>
+
+          </div>
+
+
+          <!-- SOLICITUDES PENDIENTES -->
+          <div class="tarjeta-estadistica">
+
+            <p>
+              Solicitudes pendientes
+            </p>
+
+            <h2 id="reportePendientes">
+              0
+            </h2>
+
+          </div>
+
+
+          <!-- SOLICITUDES RESUELTAS -->
+          <div class="tarjeta-estadistica">
+
+            <p>
+              Solicitudes resueltas
+            </p>
+
+            <h2 id="reporteResueltas">
+              0
+            </h2>
+
+          </div>
+
+
+          <!-- VOLUNTARIOS -->
+          <div class="tarjeta-estadistica">
+
+            <p>
+              Voluntarios activos
+            </p>
+
+            <h2 id="reporteVoluntarios">
+              0
+            </h2>
+
+          </div>
+
+
+          <!-- VISITAS -->
+          <div class="tarjeta-estadistica">
+
+            <p>
+              Visitas realizadas
+            </p>
+
+            <h2 id="reporteVisitas">
+              0
+            </h2>
+
+          </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- REPORTE POR CATEGORÍA -->
+        <!-- ====================================== -->
+
+        <section class="panel">
+
+          <div class="titulo-panel">
+
+            <h2>
+              Solicitudes por categoría
+            </h2>
+
+          </div>
+
+
+          <div class="tabla-responsive">
+
+            <table>
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Categoría
+                  </th>
+
+                  <th>
+                    Cantidad
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <!--
+                JavaScript generará automáticamente
+                las filas de esta tabla.
+              -->
+              <tbody id="tablaReporteCategorias">
+
+                <tr>
+
+                  <td colspan="2">
+                    No existen datos todavía.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+
+        <!-- ====================================== -->
+        <!-- REPORTE POR ESTADO -->
+        <!-- ====================================== -->
+
+        <section class="panel">
+
+          <div class="titulo-panel">
+
+            <h2>
+              Solicitudes por estado
+            </h2>
+
+          </div>
+
+
+          <div class="tabla-responsive">
+
+            <table>
+
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Estado
+                  </th>
+
+                  <th>
+                    Cantidad
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <!--
+                JS agrupará las solicitudes según:
+                Pendiente
+                Asignada
+                En proceso
+                Resuelta
+              -->
+              <tbody id="tablaReporteEstados">
+
+                <tr>
+
+                  <td colspan="2">
+                    No existen datos todavía.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!--
+    Conecta este HTML con su JavaScript.
+
+    reportes.js será quien haga los cálculos.
+  -->
+  <script src="js/reportes.js"></script>
+
+</body>
+
+</html>

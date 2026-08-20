@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+  <!-- Permite usar correctamente tildes, ñ y caracteres especiales -->
+  <meta charset="UTF-8">
+
+  <!-- Hace que la página se adapte a celulares y tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Título que aparecerá en la pestaña del navegador -->
+  <title>Iniciar sesión - Ayuda Mayor</title>
+
+  <!-- CSS general de toda la plataforma -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- CSS exclusivo del login -->
+  <link rel="stylesheet" href="css/login.css">
+
+</head>
+
+<body>
+
+
+  <!-- ========================================= -->
+  <!-- CONTENEDOR PRINCIPAL DEL LOGIN -->
+  <!-- ========================================= -->
+
+  <main class="login-pagina">
+
+
+    <!-- Tarjeta donde estará todo el formulario -->
+    <section class="login-tarjeta">
+
+
+      <!-- ===================================== -->
+      <!-- LOGO Y NOMBRE DE LA PLATAFORMA -->
+      <!-- ===================================== -->
+
+      <div class="login-logo">
+
+        <!-- Icono provisional -->
+        <div class="logo-icono">
+          ♡
+        </div>
+
+        <!-- Nombre del sistema -->
+        <h1>
+          Ayuda Mayor
+        </h1>
+
+        <!-- Descripción -->
+        <p>
+          Plataforma de ayuda comunitaria
+        </p>
+
+      </div>
+
+
+      <!-- ===================================== -->
+      <!-- FORMULARIO DE INICIO DE SESIÓN -->
+      <!-- ===================================== -->
+
+      <!--
+        app.js posteriormente escuchará
+        cuando este formulario sea enviado.
+      -->
+      <form id="formLogin">
+
+
+        <!-- CORREO -->
+        <div class="campo">
+
+          <!--
+            El atributo "for" conecta esta etiqueta
+            con el input cuyo id es correoLogin.
+          -->
+          <label for="correoLogin">
+            Correo electrónico
+          </label>
+
+
+          <!-- Campo donde el usuario escribirá su correo -->
+          <input
+            type="email"
+            id="correoLogin"
+            placeholder="ejemplo@ayudamayor.cl"
+            required
+          >
+
+        </div>
+
+
+        <!-- CONTRASEÑA -->
+        <div class="campo">
+
+          <label for="passwordLogin">
+            Contraseña
+          </label>
+
+
+          <!--
+            type="password" oculta visualmente
+            los caracteres escritos.
+          -->
+          <input
+            type="password"
+            id="passwordLogin"
+            placeholder="Ingrese su contraseña"
+            required
+          >
+
+        </div>
+
+
+        <!-- ROL -->
+        <div class="campo">
+
+          <label for="rolLogin">
+            Rol
+          </label>
+
+
+          <!--
+            Selector provisional de roles.
+
+            Más adelante estos perfiles podrían venir
+            desde el backend y la base de datos.
+          -->
+          <select
+            id="rolLogin"
+            required
+          >
+
+            <option value="">
+              Seleccione un rol
+            </option>
+
+
+            <option value="Coordinador">
+              Coordinador
+            </option>
+
+
+            <option value="Voluntario">
+              Voluntario
+            </option>
+
+
+            <option value="Administrador">
+              Administrador
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <!-- ===================================== -->
+        <!-- MENSAJE DE ERROR -->
+        <!-- ===================================== -->
+
+        <!--
+          JavaScript podrá escribir aquí mensajes como:
+
+          "Correo incorrecto"
+          "Contraseña incorrecta"
+          etc.
+        -->
+        <p
+          id="mensajeLogin"
+          class="mensaje-login"
+        >
+        </p>
+
+
+        <!-- ===================================== -->
+        <!-- BOTÓN INICIAR SESIÓN -->
+        <!-- ===================================== -->
+
+        <!--
+          type="submit" hace que el botón
+          envíe el formulario.
+
+          app.js interceptará este evento.
+        -->
+        <button
+          type="submit"
+          class="boton-principal boton-login"
+        >
+
+          Iniciar sesión
+
+        </button>
+
+      </form>
+
+
+      <!-- ===================================== -->
+      <!-- VOLVER AL INICIO -->
+      <!-- ===================================== -->
+
+      <!-- Lleva nuevamente a index.html -->
+      <a
+        href="index.html"
+        class="volver-inicio"
+      >
+
+        ← Volver al inicio
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ========================================= -->
+
+  <!--
+    app.js tendrá la lógica general.
+
+    Por ejemplo:
+    - validar login;
+    - guardar sesión;
+    - redirigir al dashboard;
+    - cerrar sesión.
+  -->
+<script src="js/login.js"></script>
+
+</body>
+
+</html>

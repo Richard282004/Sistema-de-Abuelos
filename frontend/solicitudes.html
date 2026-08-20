@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Solicitudes - Ayuda Mayor</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="contenedor-principal">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+      <div class="logo">
+        <div class="logo-icono">♡</div>
+
+        <div>
+          <h2>Ayuda Mayor</h2>
+          <p>Plataforma comunitaria</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+
+        <a href="dashboard.html" class="menu-item">
+          <span>⌂</span>
+          Inicio
+        </a>
+
+        <a href="adultos.html" class="menu-item">
+          <span>♙</span>
+          Adultos Mayores
+        </a>
+
+        <a href="solicitudes.html" class="menu-item activo">
+          <span>▣</span>
+          Solicitudes
+        </a>
+
+        <a href="asignaciones.html" class="menu-item">
+          <span>🔗</span>
+          Asignaciones
+        </a>
+
+        <a href="voluntarios.html" class="menu-item">
+          <span>♧</span>
+          Voluntarios
+        </a>
+
+        <a href="visitas.html" class="menu-item">
+          <span>✓</span>
+          Visitas y Entregas
+        </a>
+
+        <a href="reportes.html" class="menu-item">
+          <span>▥</span>
+          Reportes
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- CONTENIDO -->
+    <main class="contenido">
+
+      <header class="header">
+
+        <h3>Solicitudes</h3>
+
+        <a href="dashboard.html" class="boton-secundario">
+          Volver al panel
+        </a>
+
+      </header>
+
+
+      <section class="pagina-contenido">
+
+        <!-- ENCABEZADO -->
+        <div class="encabezado-pagina">
+
+          <div>
+            <h1>Solicitudes de ayuda</h1>
+
+            <p>
+              Registra y administra las solicitudes de apoyo comunitario.
+            </p>
+          </div>
+
+          <button
+            id="btnNuevaSolicitud"
+            class="boton-principal"
+          >
+            + Nueva solicitud
+          </button>
+
+        </div>
+
+
+        <!-- FORMULARIO -->
+        <section
+          id="contenedorFormularioSolicitud"
+          class="panel formulario-adulto oculto"
+        >
+
+          <div class="titulo-panel">
+            <h2>Nueva solicitud</h2>
+          </div>
+
+          <form id="formSolicitud">
+
+            <div class="form-grid">
+
+
+              <!-- ADULTO MAYOR -->
+              <div class="campo">
+
+                <label for="adultoMayor">
+                  Adulto mayor
+                </label>
+
+                <select id="adultoMayor" required>
+
+                  <option value="">
+                    Seleccione adulto mayor
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- CATEGORÍA -->
+              <div class="campo">
+
+                <label for="categoria">
+                  Categoría
+                </label>
+
+                <select id="categoria" required>
+
+                  <option value="">
+                    Seleccione categoría
+                  </option>
+
+                  <option value="Compras">
+                    Compras
+                  </option>
+
+                  <option value="Medicamentos">
+                    Medicamentos
+                  </option>
+
+                  <option value="Trámites">
+                    Trámites
+                  </option>
+
+                  <option value="Acompañamiento">
+                    Acompañamiento
+                  </option>
+
+                  <option value="Reparación menor">
+                    Reparación menor
+                  </option>
+
+                  <option value="Actividad social">
+                    Actividad social
+                  </option>
+
+                  <option value="Otra">
+                    Otra
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- URGENCIA -->
+              <div class="campo">
+
+                <label for="urgencia">
+                  Urgencia
+                </label>
+
+                <select id="urgencia" required>
+
+                  <option value="">
+                    Seleccione urgencia
+                  </option>
+
+                  <option value="Alta">
+                    Alta
+                  </option>
+
+                  <option value="Media">
+                    Media
+                  </option>
+
+                  <option value="Baja">
+                    Baja
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ESTADO -->
+              <div class="campo">
+
+                <label for="estado">
+                  Estado
+                </label>
+
+                <select id="estado" required>
+
+                  <option value="Pendiente">
+                    Pendiente
+                  </option>
+
+                  <option value="Asignada">
+                    Asignada
+                  </option>
+
+                  <option value="En proceso">
+                    En proceso
+                  </option>
+
+                  <option value="Resuelta">
+                    Resuelta
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- DESCRIPCIÓN -->
+              <div class="campo campo-completo">
+
+                <label for="descripcion">
+                  Descripción de la ayuda
+                </label>
+
+                <textarea
+                  id="descripcion"
+                  rows="4"
+                  placeholder="Ej: Necesita retirar medicamentos en el CESFAM."
+                  required
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <!-- BOTONES -->
+            <div class="botones-formulario">
+
+              <button
+                type="button"
+                id="btnCancelarSolicitud"
+                class="boton-cancelar"
+              >
+                Cancelar
+              </button>
+
+              <button
+                type="submit"
+                class="boton-principal"
+              >
+                Guardar solicitud
+              </button>
+
+            </div>
+
+          </form>
+
+        </section>
+
+
+        <!-- TABLA -->
+        <section class="panel">
+
+          <div class="titulo-panel">
+
+            <h2>Solicitudes registradas</h2>
+
+            <span id="cantidadSolicitudes">
+              0 solicitudes
+            </span>
+
+          </div>
+
+
+          <div class="tabla-responsive">
+
+            <table>
+
+              <thead>
+
+                <tr>
+                  <th>ID</th>
+                  <th>Adulto Mayor</th>
+                  <th>Categoría</th>
+                  <th>Urgencia</th>
+                  <th>Estado</th>
+                  <th>Fecha</th>
+                  <th>Acciones</th>
+                </tr>
+
+              </thead>
+
+
+              <tbody id="tablaSolicitudes">
+
+                <tr>
+
+                  <td colspan="7">
+                    No hay solicitudes registradas.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <script src="js/solicitudes.js"></script>
+
+</body>
+
+</html>

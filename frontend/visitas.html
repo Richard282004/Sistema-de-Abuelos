@@ -1,0 +1,558 @@
+<!-- Indica que estamos usando HTML5 -->
+<!DOCTYPE html>
+
+<!-- Idioma principal de la página -->
+<html lang="es">
+
+<head>
+
+  <!-- Permite usar tildes, ñ y caracteres especiales -->
+  <meta charset="UTF-8">
+
+  <!-- Hace la página adaptable a celulares y tablets -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Nombre que aparece en la pestaña del navegador -->
+  <title>Visitas y Entregas - Ayuda Mayor</title>
+
+  <!-- Carga el mismo CSS utilizado por todo el sistema -->
+  <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+  <!-- Contenedor general: sidebar + contenido -->
+  <div class="contenedor-principal">
+
+
+    <!-- ======================================= -->
+    <!-- MENÚ LATERAL -->
+    <!-- ======================================= -->
+
+    <aside class="sidebar">
+
+      <!-- Logo del sistema -->
+      <div class="logo">
+
+        <div class="logo-icono">
+          ♡
+        </div>
+
+        <div>
+
+          <h2>
+            Ayuda Mayor
+          </h2>
+
+          <p>
+            Plataforma comunitaria
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- Navegación principal -->
+      <nav class="menu">
+
+        <a
+          href="dashboard.html"
+          class="menu-item"
+        >
+          <span>⌂</span>
+          Inicio
+        </a>
+
+
+        <a
+          href="adultos.html"
+          class="menu-item"
+        >
+          <span>♙</span>
+          Adultos Mayores
+        </a>
+
+
+        <a
+          href="solicitudes.html"
+          class="menu-item"
+        >
+          <span>▣</span>
+          Solicitudes
+        </a>
+
+
+        <a
+          href="asignaciones.html"
+          class="menu-item"
+        >
+          <span>🔗</span>
+          Asignaciones
+        </a>
+
+
+        <a
+          href="voluntarios.html"
+          class="menu-item"
+        >
+          <span>♧</span>
+          Voluntarios
+        </a>
+
+
+        <!-- Página actual -->
+        <a
+          href="visitas.html"
+          class="menu-item activo"
+        >
+          <span>✓</span>
+          Visitas y Entregas
+        </a>
+
+
+        <a
+          href="reportes.html"
+          class="menu-item"
+        >
+          <span>▥</span>
+          Reportes
+        </a>
+
+      </nav>
+
+    </aside>
+
+
+    <!-- ======================================= -->
+    <!-- CONTENIDO PRINCIPAL -->
+    <!-- ======================================= -->
+
+    <main class="contenido">
+
+
+      <!-- Cabecera superior -->
+      <header class="header">
+
+        <h3>
+          Visitas y Entregas
+        </h3>
+
+        <a
+          href="dashboard.html"
+          class="boton-secundario"
+        >
+          Volver al panel
+        </a>
+
+      </header>
+
+
+      <section class="pagina-contenido">
+
+
+        <!-- ======================================= -->
+        <!-- ENCABEZADO DEL MÓDULO -->
+        <!-- ======================================= -->
+
+        <div class="encabezado-pagina">
+
+          <div>
+
+            <h1>
+              Seguimiento de visitas y entregas
+            </h1>
+
+            <p>
+              Registra las actividades realizadas por los
+              voluntarios y realiza seguimiento a cada solicitud.
+            </p>
+
+          </div>
+
+
+          <!-- JavaScript utilizará este botón
+               para mostrar el formulario -->
+          <button
+            id="btnNuevaVisita"
+            class="boton-principal"
+          >
+            + Registrar visita / entrega
+          </button>
+
+        </div>
+
+
+        <!-- ======================================= -->
+        <!-- FORMULARIO -->
+        <!-- ======================================= -->
+
+        <!-- Comienza oculto gracias a la clase "oculto" -->
+        <section
+          id="contenedorFormularioVisita"
+          class="panel formulario-adulto oculto"
+        >
+
+
+          <div class="titulo-panel">
+
+            <h2>
+              Registrar actividad
+            </h2>
+
+          </div>
+
+
+          <!-- JavaScript escuchará el submit
+               para guardar los datos -->
+          <form id="formVisita">
+
+
+            <div class="form-grid">
+
+
+              <!-- ================================= -->
+              <!-- ASIGNACIÓN -->
+              <!-- ================================= -->
+
+              <div class="campo">
+
+                <label for="asignacionVisita">
+                  Asignación
+                </label>
+
+                <!-- JavaScript cargará automáticamente
+                     las asignaciones existentes -->
+                <select
+                  id="asignacionVisita"
+                  required
+                >
+
+                  <option value="">
+                    Seleccione una asignación
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ================================= -->
+              <!-- TIPO DE ACTIVIDAD -->
+              <!-- ================================= -->
+
+              <div class="campo">
+
+                <label for="tipoVisita">
+                  Tipo de actividad
+                </label>
+
+                <select
+                  id="tipoVisita"
+                  required
+                >
+
+                  <option value="">
+                    Seleccione tipo
+                  </option>
+
+                  <option value="Visita">
+                    Visita
+                  </option>
+
+                  <option value="Entrega">
+                    Entrega
+                  </option>
+
+                  <option value="Acompañamiento">
+                    Acompañamiento
+                  </option>
+
+                  <option value="Trámite">
+                    Trámite
+                  </option>
+
+                  <option value="Otra">
+                    Otra
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ================================= -->
+              <!-- FECHA -->
+              <!-- ================================= -->
+
+              <div class="campo">
+
+                <label for="fechaVisita">
+                  Fecha
+                </label>
+
+                <input
+                  type="date"
+                  id="fechaVisita"
+                  required
+                >
+
+              </div>
+
+
+              <!-- ================================= -->
+              <!-- HORA -->
+              <!-- ================================= -->
+
+              <div class="campo">
+
+                <label for="horaVisita">
+                  Hora
+                </label>
+
+                <input
+                  type="time"
+                  id="horaVisita"
+                  required
+                >
+
+              </div>
+
+
+              <!-- ================================= -->
+              <!-- RESULTADO -->
+              <!-- ================================= -->
+
+              <div class="campo">
+
+                <label for="resultadoVisita">
+                  Resultado
+                </label>
+
+                <select
+                  id="resultadoVisita"
+                  required
+                >
+
+                  <option value="">
+                    Seleccione resultado
+                  </option>
+
+                  <option value="Ayuda realizada">
+                    Ayuda realizada
+                  </option>
+
+                  <option value="Entrega completada">
+                    Entrega completada
+                  </option>
+
+                  <option value="Persona no disponible">
+                    Persona no disponible
+                  </option>
+
+                  <option value="Reprogramar">
+                    Reprogramar
+                  </option>
+
+                  <option value="Otro">
+                    Otro
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ================================= -->
+              <!-- ESTADO -->
+              <!-- ================================= -->
+
+              <div class="campo">
+
+                <label for="estadoVisita">
+                  Estado
+                </label>
+
+                <select
+                  id="estadoVisita"
+                  required
+                >
+
+                  <option value="Programada">
+                    Programada
+                  </option>
+
+                  <option value="Realizada">
+                    Realizada
+                  </option>
+
+                  <option value="No realizada">
+                    No realizada
+                  </option>
+
+                  <option value="Reprogramada">
+                    Reprogramada
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <!-- ================================= -->
+              <!-- OBSERVACIONES -->
+              <!-- ================================= -->
+
+              <!-- Ocupa todo el ancho -->
+              <div class="campo campo-completo">
+
+                <label for="observacionesVisita">
+                  Observaciones
+                </label>
+
+                <textarea
+                  id="observacionesVisita"
+                  rows="4"
+                  placeholder="Ej: Se realizó la entrega de medicamentos sin inconvenientes."
+                ></textarea>
+
+              </div>
+
+            </div>
+
+
+            <!-- ================================= -->
+            <!-- BOTONES -->
+            <!-- ================================= -->
+
+            <div class="botones-formulario">
+
+
+              <!-- type button evita enviar el formulario -->
+              <button
+                type="button"
+                id="btnCancelarVisita"
+                class="boton-cancelar"
+              >
+                Cancelar
+              </button>
+
+
+              <!-- Envía el formulario -->
+              <button
+                type="submit"
+                class="boton-principal"
+              >
+                Guardar actividad
+              </button>
+
+            </div>
+
+          </form>
+
+        </section>
+
+
+        <!-- ======================================= -->
+        <!-- TABLA DE VISITAS -->
+        <!-- ======================================= -->
+
+        <section class="panel">
+
+
+          <div class="titulo-panel">
+
+            <h2>
+              Visitas y entregas registradas
+            </h2>
+
+            <!-- JavaScript actualizará este número -->
+            <span id="cantidadVisitas">
+              0 registros
+            </span>
+
+          </div>
+
+
+          <!-- Permite desplazamiento horizontal
+               en pantallas pequeñas -->
+          <div class="tabla-responsive">
+
+            <table>
+
+
+              <!-- Encabezados -->
+              <thead>
+
+                <tr>
+
+                  <th>
+                    Adulto Mayor
+                  </th>
+
+                  <th>
+                    Voluntario
+                  </th>
+
+                  <th>
+                    Actividad
+                  </th>
+
+                  <th>
+                    Fecha
+                  </th>
+
+                  <th>
+                    Hora
+                  </th>
+
+                  <th>
+                    Resultado
+                  </th>
+
+                  <th>
+                    Estado
+                  </th>
+
+                  <th>
+                    Acciones
+                  </th>
+
+                </tr>
+
+              </thead>
+
+
+              <!-- JavaScript insertará aquí los registros -->
+              <tbody id="tablaVisitas">
+
+                <tr>
+
+                  <td colspan="8">
+                    No hay visitas o entregas registradas.
+                  </td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- JavaScript exclusivo del módulo -->
+  <script src="js/visitas.js"></script>
+
+</body>
+
+</html>

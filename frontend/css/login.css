@@ -1,0 +1,293 @@
+/* ======================================================
+   LOGIN.CSS
+   Estilos exclusivos de la pantalla de inicio de sesión.
+   Los estilos generales siguen estando en style.css.
+   ====================================================== */
+
+
+/* ======================================================
+   PÁGINA COMPLETA
+   ====================================================== */
+
+/* Contenedor que ocupa toda la pantalla del navegador */
+.login-pagina {
+
+  /* La altura mínima será el 100% de la pantalla */
+  min-height: 100vh;
+
+  /* Usamos Flexbox para centrar la tarjeta */
+  display: flex;
+
+  /* Centra horizontalmente */
+  justify-content: center;
+
+  /* Centra verticalmente */
+  align-items: center;
+
+  /* Espacio para que no quede pegado en pantallas pequeñas */
+  padding: 30px;
+
+  /* Fondo suave */
+  background: #f4f7f6;
+
+}
+
+
+/* ======================================================
+   TARJETA DEL LOGIN
+   ====================================================== */
+
+.login-tarjeta {
+
+  /* Ancho completo disponible */
+  width: 100%;
+
+  /* Pero nunca será más ancha que 430px */
+  max-width: 430px;
+
+  /* Fondo blanco */
+  background: white;
+
+  /* Espacio interior */
+  padding: 40px;
+
+  /* Bordes redondeados */
+  border-radius: 16px;
+
+  /* Sombra para separar la tarjeta del fondo */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+
+}
+
+
+/* ======================================================
+   LOGO Y TÍTULO
+   ====================================================== */
+
+.login-logo {
+
+  /* Centra el contenido */
+  text-align: center;
+
+  /* Separación respecto al formulario */
+  margin-bottom: 30px;
+
+}
+
+
+/* Icono del corazón */
+.login-logo .logo-icono {
+
+  /* Tamaño del icono */
+  font-size: 34px;
+
+  /* Espacio debajo */
+  margin-bottom: 10px;
+
+}
+
+
+/* Nombre Ayuda Mayor */
+.login-logo h1 {
+
+  /* Eliminamos márgenes innecesarios */
+  margin: 0;
+
+  /* Tamaño del título */
+  font-size: 28px;
+
+}
+
+
+/* Texto bajo el nombre */
+.login-logo p {
+
+  /* Separación superior */
+  margin-top: 8px;
+
+  /* Color más suave */
+  color: #6b7280;
+
+}
+
+
+/* ======================================================
+   CAMPOS DEL FORMULARIO
+   ====================================================== */
+
+.login-tarjeta .campo {
+
+  /* Espacio entre cada campo */
+  margin-bottom: 20px;
+
+}
+
+
+/* Etiquetas: correo, contraseña y rol */
+.login-tarjeta label {
+
+  /* Hace que la etiqueta ocupe su propia línea */
+  display: block;
+
+  /* Texto un poco más destacado */
+  font-weight: 600;
+
+  /* Separación con el input */
+  margin-bottom: 7px;
+
+}
+
+
+/* Aplicamos el mismo diseño a input y select */
+.login-tarjeta input,
+.login-tarjeta select {
+
+  /* Ocupan todo el ancho disponible */
+  width: 100%;
+
+  /* Espacio interno */
+  padding: 12px 14px;
+
+  /* Borde suave */
+  border: 1px solid #d1d5db;
+
+  /* Bordes redondeados */
+  border-radius: 8px;
+
+  /* Tamaño de letra */
+  font-size: 15px;
+
+  /* Evita problemas de tamaño al usar width 100% */
+  box-sizing: border-box;
+
+}
+
+
+/* ======================================================
+   CUANDO EL USUARIO SELECCIONA UN CAMPO
+   ====================================================== */
+
+.login-tarjeta input:focus,
+.login-tarjeta select:focus {
+
+  /* Quitamos el borde automático del navegador */
+  outline: none;
+
+  /* Destacamos el campo activo */
+  border-color: #2f855a;
+
+}
+
+
+/* ======================================================
+   MENSAJE DEL LOGIN
+   ====================================================== */
+
+.mensaje-login {
+
+  /* Reservamos un pequeño espacio aunque esté vacío */
+  min-height: 20px;
+
+  /* Color para mensajes de error */
+  color: #b91c1c;
+
+  /* Tamaño ligeramente menor */
+  font-size: 14px;
+
+  /* Centrado */
+  text-align: center;
+
+}
+
+
+/* ======================================================
+   BOTÓN INICIAR SESIÓN
+   ====================================================== */
+
+.boton-login {
+
+  /* Hace que el botón ocupe todo el ancho */
+  width: 100%;
+
+  /* Espacio superior */
+  margin-top: 5px;
+
+  /* Cambia el cursor al pasar por encima */
+  cursor: pointer;
+
+}
+
+
+/* ======================================================
+   VOLVER AL INICIO
+   ====================================================== */
+
+.volver-inicio {
+
+  /* Lo convertimos en bloque para poder centrarlo */
+  display: block;
+
+  /* Centrado */
+  text-align: center;
+
+  /* Separación del botón */
+  margin-top: 22px;
+
+  /* Color suave */
+  color: #6b7280;
+
+  /* Quitamos el subrayado */
+  text-decoration: none;
+
+  /* Tamaño del texto */
+  font-size: 14px;
+
+}
+
+
+/* Cuando pasamos el mouse por encima */
+.volver-inicio:hover {
+
+  /* Oscurecemos ligeramente */
+  color: #2f855a;
+
+  /* Mostramos subrayado */
+  text-decoration: underline;
+
+}
+
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+/*
+   Estas reglas se aplican cuando la pantalla
+   tiene 600px de ancho o menos.
+*/
+@media (max-width: 600px) {
+
+  .login-pagina {
+
+    /* Reducimos espacio exterior */
+    padding: 18px;
+
+  }
+
+
+  .login-tarjeta {
+
+    /* Reducimos espacio interior */
+    padding: 28px 22px;
+
+  }
+
+
+  .login-logo h1 {
+
+    /* Título ligeramente más pequeño */
+    font-size: 24px;
+
+  }
+
+}

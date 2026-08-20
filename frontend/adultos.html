@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adultos Mayores - Ayuda Mayor</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <div class="contenedor-principal">
+
+    <aside class="sidebar">
+
+      <div class="logo">
+        <div class="logo-icono">♡</div>
+
+        <div>
+          <h2>Ayuda Mayor</h2>
+          <p>Plataforma comunitaria</p>
+        </div>
+      </div>
+
+      <nav class="menu">
+
+        <a href="dashboard.html" class="menu-item">
+          <span>⌂</span>
+          Inicio
+        </a>
+
+        <a href="adultos.html" class="menu-item activo">
+          <span>♙</span>
+          Adultos Mayores
+        </a>
+
+        <a href="solicitudes.html" class="menu-item">
+          <span>▣</span>
+          Solicitudes
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>🔗</span>
+          Asignaciones
+        </a>
+
+        <a href="voluntarios.html" class="menu-item">
+          <span>♧</span>
+          Voluntarios
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>✓</span>
+          Visitas y Entregas
+        </a>
+
+        <a href="#" class="menu-item">
+          <span>▥</span>
+          Reportes
+        </a>
+
+      </nav>
+
+    </aside>
+
+    <main class="contenido">
+
+      <header class="header">
+
+        <div>
+          <h3>Adultos Mayores</h3>
+        </div>
+
+        <a href="dashboard.html" class="boton-secundario">
+          Volver al panel
+        </a>
+
+      </header>
+
+      <section class="pagina-contenido">
+
+        <div class="encabezado-pagina">
+
+          <div>
+            <h1>Adultos mayores inscritos</h1>
+
+            <p>
+              Registra y administra las fichas de las personas beneficiarias.
+            </p>
+          </div>
+
+          <button id="btnMostrarFormulario" class="boton-principal">
+            + Registrar adulto mayor
+          </button>
+
+        </div>
+
+        <section
+          id="contenedorFormulario"
+          class="panel formulario-adulto oculto"
+        >
+
+          <div class="titulo-panel">
+            <h2>Nueva ficha de adulto mayor</h2>
+          </div>
+
+          <form id="formAdulto">
+
+            <div class="form-grid">
+
+              <div class="campo">
+                <label for="nombre">Nombre</label>
+                <input
+                  type="text"
+                  id="nombre"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label for="apellido">Apellido</label>
+                <input
+                  type="text"
+                  id="apellido"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label for="rut">RUT</label>
+                <input
+                  type="text"
+                  id="rut"
+                  placeholder="12.345.678-9"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label for="edad">Edad</label>
+                <input
+                  type="number"
+                  id="edad"
+                  min="60"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label for="telefono">Teléfono</label>
+                <input
+                  type="text"
+                  id="telefono"
+                  required
+                >
+              </div>
+
+              <div class="campo">
+                <label for="comuna">Comuna</label>
+                <input
+                  type="text"
+                  id="comuna"
+                  required
+                >
+              </div>
+
+              <div class="campo campo-completo">
+                <label for="direccion">Dirección</label>
+                <input
+                  type="text"
+                  id="direccion"
+                  required
+                >
+              </div>
+
+              <div class="campo campo-completo">
+                <label for="necesidades">Necesidades</label>
+
+                <input
+                  type="text"
+                  id="necesidades"
+                  placeholder="Ej: medicamentos, acompañamiento"
+                >
+              </div>
+
+            </div>
+
+            <h3 class="subtitulo-formulario">
+              Contacto de emergencia
+            </h3>
+
+            <div class="form-grid">
+
+              <div class="campo">
+                <label for="contactoNombre">Nombre</label>
+                <input
+                  type="text"
+                  id="contactoNombre"
+                >
+              </div>
+
+              <div class="campo">
+                <label for="contactoTelefono">Teléfono</label>
+                <input
+                  type="text"
+                  id="contactoTelefono"
+                >
+              </div>
+
+              <div class="campo">
+                <label for="contactoParentesco">Parentesco</label>
+                <input
+                  type="text"
+                  id="contactoParentesco"
+                  placeholder="Ej: Hija"
+                >
+              </div>
+
+              <div class="campo campo-completo">
+                <label for="restricciones">
+                  Restricciones de contacto
+                </label>
+
+                <textarea
+                  id="restricciones"
+                  rows="3"
+                  placeholder="Ej: Llamar después de las 10:00"
+                ></textarea>
+              </div>
+
+            </div>
+
+            <div class="botones-formulario">
+
+              <button
+                type="button"
+                id="btnCancelar"
+                class="boton-cancelar"
+              >
+                Cancelar
+              </button>
+
+              <button
+                type="submit"
+                class="boton-principal"
+              >
+                Guardar adulto mayor
+              </button>
+
+            </div>
+
+          </form>
+
+        </section>
+
+        <section class="panel">
+
+          <div class="titulo-panel">
+
+            <h2>Listado de adultos mayores</h2>
+
+            <span id="cantidadAdultos">
+              0 registrados
+            </span>
+
+          </div>
+
+          <div class="tabla-responsive">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Nombre</th>
+                  <th>RUT</th>
+                  <th>Edad</th>
+                  <th>Comuna</th>
+                  <th>Teléfono</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+
+              <tbody id="tablaAdultos">
+
+                <tr>
+                  <td colspan="7">
+                    Cargando adultos mayores...
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+    </main>
+
+  </div>
+
+  <script src="js/adultos.js"></script>
+
+</body>
+</html>

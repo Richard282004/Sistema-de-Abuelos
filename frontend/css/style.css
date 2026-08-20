@@ -1,0 +1,1011 @@
+/* ======================================================
+   STYLE.CSS
+   Estilos GENERALES compartidos por toda la plataforma.
+
+   Aquí dejamos:
+   - estructura general;
+   - menú lateral;
+   - header;
+   - botones;
+   - formularios;
+   - tablas;
+   - estados;
+   - responsive.
+
+   Cada página puede tener además su propio CSS.
+   ====================================================== */
+
+
+/* ======================================================
+   RESETEO BÁSICO
+   ====================================================== */
+
+/*
+  El navegador agrega márgenes y tamaños por defecto.
+  Con este bloque dejamos una base más controlada.
+*/
+*,
+*::before,
+*::after {
+
+  /*
+    Hace que padding y border se incluyan
+    dentro del tamaño total del elemento.
+  */
+  box-sizing: border-box;
+
+  /* Quitamos márgenes automáticos */
+  margin: 0;
+
+  /* Quitamos rellenos automáticos */
+  padding: 0;
+}
+
+
+/* Estilos generales de toda la página */
+body {
+
+  /* Tipo de letra principal */
+  font-family: Arial, Helvetica, sans-serif;
+
+  /* Fondo general de la aplicación */
+  background: #f8f6fc;
+
+  /* Color general de texto */
+  color: #2a1c3d;
+
+  /* Como mínimo ocupa toda la pantalla */
+  min-height: 100vh;
+
+  /* Separación vertical entre líneas */
+  line-height: 1.6;
+}
+
+
+/* Enlaces generales */
+a {
+
+  /* Quitamos el subrayado */
+  text-decoration: none;
+
+  /* Hereda el color del elemento padre */
+  color: inherit;
+}
+
+
+/* ======================================================
+   ESTRUCTURA GENERAL
+   ====================================================== */
+
+/*
+  Contenedor utilizado en las páginas internas.
+
+  Dentro tendremos:
+  Sidebar + Contenido
+*/
+.contenedor-principal {
+
+  /* Coloca ambos elementos uno al lado del otro */
+  display: flex;
+
+  /* Ocupa como mínimo toda la pantalla */
+  min-height: 100vh;
+}
+
+
+/*
+  Zona principal donde aparecen los módulos.
+*/
+.contenido {
+
+  /*
+    Ocupa todo el espacio restante
+    excepto los 260px del sidebar.
+  */
+  width: calc(100% - 260px);
+
+  min-height: 100vh;
+
+  /* Fondo general */
+  background: #f8f6fc;
+}
+
+
+/* ======================================================
+   SIDEBAR
+   ====================================================== */
+
+/*
+  Menú lateral izquierdo.
+*/
+.sidebar {
+
+  /* Ancho fijo */
+  width: 260px;
+
+  /* Ocupa toda la altura */
+  min-height: 100vh;
+
+  /* Fondo blanco */
+  background: white;
+
+  /* Espaciado interno */
+  padding: 30px 20px;
+
+  /* Línea divisoria */
+  border-right: 1px solid #ece6f6;
+
+  /* Flex permite ordenar sus elementos verticalmente */
+  display: flex;
+
+  /* Elementos uno debajo de otro */
+  flex-direction: column;
+}
+
+
+/* ======================================================
+   LOGO
+   ====================================================== */
+
+.logo {
+
+  /* Logo e información quedan horizontalmente */
+  display: flex;
+
+  /* Los alinea verticalmente */
+  align-items: center;
+
+  /* Separación entre icono y texto */
+  gap: 12px;
+
+  /* Separación inferior */
+  margin-bottom: 35px;
+}
+
+
+/* Icono provisional del logo */
+.logo-icono {
+
+  width: 55px;
+
+  height: 55px;
+
+  /* Borde violeta */
+  border: 3px solid #7b4ce2;
+
+  /* Lo convierte en círculo */
+  border-radius: 50%;
+
+  color: #7b4ce2;
+
+  /* Centramos el símbolo */
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-size: 30px;
+}
+
+
+/* Nombre Ayuda Mayor */
+.logo h2 {
+
+  font-size: 21px;
+}
+
+
+/* Texto "Plataforma comunitaria" */
+.logo p {
+
+  margin-top: 4px;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+
+/* ======================================================
+   MENÚ LATERAL
+   ====================================================== */
+
+.menu {
+
+  /* Los botones aparecen verticalmente */
+  display: flex;
+
+  flex-direction: column;
+
+  /* Separación entre opciones */
+  gap: 8px;
+}
+
+
+/* Cada opción del menú */
+.menu-item {
+
+  padding: 14px 15px;
+
+  border-radius: 10px;
+
+  /* Icono + texto horizontalmente */
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  color: #555b70;
+
+  /* Animación suave */
+  transition: 0.2s;
+}
+
+
+/* Cuando pasamos el mouse */
+.menu-item:hover {
+
+  background: #f4efff;
+
+  color: #7645dc;
+}
+
+
+/*
+  Página actualmente seleccionada.
+
+  Ejemplo:
+  si estamos en Solicitudes,
+  esa opción queda destacada.
+*/
+.menu-item.activo {
+
+  background: #efe8ff;
+
+  color: #7645dc;
+
+  font-weight: bold;
+}
+
+
+/* ======================================================
+   MENSAJE INFERIOR DEL SIDEBAR
+   ====================================================== */
+
+.mensaje-ayuda {
+
+  /*
+    Empuja este bloque hasta la parte inferior
+    del sidebar.
+  */
+  margin-top: auto;
+
+  padding: 25px;
+
+  border-radius: 16px;
+
+  background: #f4efff;
+
+  text-align: center;
+}
+
+
+/* Emojis de adultos mayores */
+.emoji-mayores {
+
+  font-size: 42px;
+
+  margin-bottom: 12px;
+}
+
+
+.mensaje-ayuda h3 {
+
+  color: #7645dc;
+
+  margin-bottom: 10px;
+}
+
+
+.mensaje-ayuda p {
+
+  color: #666;
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+.mensaje-ayuda span {
+
+  display: block;
+
+  margin-top: 15px;
+
+  color: #7645dc;
+}
+
+
+/* ======================================================
+   HEADER SUPERIOR
+   ====================================================== */
+
+.header {
+
+  /* Altura del encabezado */
+  height: 80px;
+
+  /* Espaciado horizontal */
+  padding: 0 35px;
+
+  background: white;
+
+  border-bottom: 1px solid #eee;
+
+  /*
+    Coloca título a la izquierda
+    y usuario/botones a la derecha.
+  */
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+
+.header h3 {
+
+  color: #7645dc;
+}
+
+
+/* Información del usuario conectado */
+.usuario {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+}
+
+
+.usuario p {
+
+  margin-top: 3px;
+
+  color: #777;
+
+  font-size: 12px;
+}
+
+
+/* Avatar circular */
+.avatar {
+
+  width: 45px;
+
+  height: 45px;
+
+  background: #e8ddff;
+
+  color: #7645dc;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  font-weight: bold;
+}
+
+
+/* Campana de notificaciones */
+.campana {
+
+  position: relative;
+
+  font-size: 22px;
+}
+
+
+/* Número encima de la campana */
+.campana span {
+
+  position: absolute;
+
+  top: -10px;
+
+  right: -10px;
+
+  width: 18px;
+
+  height: 18px;
+
+  background: #ef5151;
+
+  color: white;
+
+  border-radius: 50%;
+
+  font-size: 10px;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+
+/* ======================================================
+   BOTONES GENERALES
+   ====================================================== */
+
+/* Botón principal violeta */
+.boton-principal {
+
+  display: inline-block;
+
+  padding: 14px 20px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background: #7a46de;
+
+  color: white;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+
+/* Cuando pasamos el mouse */
+.boton-principal:hover {
+
+  background: #6634c8;
+}
+
+
+/* Botones secundarios y cancelar */
+.boton-cancelar,
+.boton-secundario {
+
+  display: inline-block;
+
+  padding: 12px 18px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 9px;
+
+  background: white;
+
+  color: #555b70;
+
+  cursor: pointer;
+}
+
+
+/* ======================================================
+   PANELES GENERALES
+   ====================================================== */
+
+/*
+  Las cajas blancas grandes que aparecen
+  en distintas páginas.
+*/
+.panel {
+
+  background: white;
+
+  border: 1px solid #ebebeb;
+
+  border-radius: 15px;
+
+  padding: 22px;
+
+  /* Sombra muy suave */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+
+  margin-bottom: 25px;
+}
+
+
+/* Encabezado de cada panel */
+.titulo-panel {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+
+.titulo-panel h2 {
+
+  font-size: 18px;
+}
+
+
+.titulo-panel a {
+
+  color: #7645dc;
+
+  font-size: 13px;
+}
+
+
+/* ======================================================
+   CONTENIDO DE LAS PÁGINAS
+   ====================================================== */
+
+.pagina-contenido {
+
+  padding: 35px;
+}
+
+
+/*
+  Encabezado de páginas como:
+
+  Adultos Mayores
+  Solicitudes
+  Voluntarios
+*/
+.encabezado-pagina {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 25px;
+}
+
+
+.encabezado-pagina h1 {
+
+  margin-bottom: 8px;
+}
+
+
+.encabezado-pagina p {
+
+  color: #777;
+}
+
+
+/*
+  Esta clase permite ocultar elementos.
+
+  JavaScript la quita cuando queremos
+  mostrar un formulario.
+*/
+.oculto {
+
+  display: none;
+}
+
+
+/* ======================================================
+   FORMULARIOS
+   ====================================================== */
+
+/* Separación del formulario */
+.formulario-adulto {
+
+  margin-bottom: 25px;
+}
+
+
+/*
+  Organiza los campos en dos columnas.
+*/
+.form-grid {
+
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+}
+
+
+/* Cada campo individual */
+.campo {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 7px;
+}
+
+
+/*
+  Hace que un campo utilice las dos columnas.
+
+  Ejemplo:
+  Dirección o descripción.
+*/
+.campo-completo {
+
+  grid-column: 1 / -1;
+}
+
+
+/* Etiquetas */
+.campo label {
+
+  font-weight: bold;
+
+  font-size: 13px;
+}
+
+
+/*
+  Aplicamos el mismo diseño a:
+  input
+  textarea
+  select
+*/
+.campo input,
+.campo textarea,
+.campo select {
+
+  width: 100%;
+
+  padding: 12px;
+
+  border: 1px solid #ddd;
+
+  border-radius: 8px;
+
+  background: white;
+
+  font-size: 14px;
+}
+
+
+/*
+  Cuando el usuario está escribiendo
+  dentro de un campo.
+*/
+.campo input:focus,
+.campo textarea:focus,
+.campo select:focus {
+
+  outline: none;
+
+  border-color: #7645dc;
+}
+
+
+/* Subtítulo dentro de formularios */
+.subtitulo-formulario {
+
+  margin: 25px 0 15px;
+}
+
+
+/* Zona de botones del formulario */
+.botones-formulario {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  gap: 12px;
+
+  margin-top: 25px;
+}
+
+
+/* ======================================================
+   TABLAS
+   ====================================================== */
+
+/*
+  Si una tabla es demasiado grande,
+  permite moverla horizontalmente.
+*/
+.tabla-responsive {
+
+  overflow-x: auto;
+}
+
+
+/* Tabla completa */
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+}
+
+
+/* Encabezados de las columnas */
+th {
+
+  padding: 12px;
+
+  color: #777;
+
+  font-size: 12px;
+
+  text-align: left;
+
+  border-bottom: 1px solid #eee;
+}
+
+
+/* Celdas */
+td {
+
+  padding: 15px 12px;
+
+  border-bottom: 1px solid #f0f0f0;
+
+  font-size: 13px;
+}
+
+
+/* Nombre principal dentro de una tabla */
+td strong {
+
+  display: block;
+}
+
+
+/* Información secundaria */
+td small {
+
+  color: #999;
+}
+
+
+/* ======================================================
+   ESTADOS Y ETIQUETAS
+   ====================================================== */
+
+/*
+  Base para todas las etiquetas:
+
+  Pendiente
+  Resuelta
+  Alta
+  Media
+  etc.
+*/
+.estado {
+
+  display: inline-block;
+
+  padding: 6px 10px;
+
+  border-radius: 10px;
+
+  font-size: 11px;
+}
+
+
+/* Urgencia alta */
+.urgencia-alta {
+
+  background: #ffe3e3;
+
+  color: #c63636;
+}
+
+
+/* Urgencia media */
+.urgencia-media {
+
+  background: #fff0d8;
+
+  color: #d07800;
+}
+
+
+/* Urgencia baja */
+.urgencia-baja {
+
+  background: #f4f1e8;
+
+  color: #847d63;
+}
+
+
+/* En proceso */
+.proceso {
+
+  background: #fff1d4;
+
+  color: #c28100;
+}
+
+
+/* Asignada */
+.asignada {
+
+  background: #e7efff;
+
+  color: #2665c9;
+}
+
+
+/* Pendiente */
+.pendiente {
+
+  background: #eee7ff;
+
+  color: #7447d3;
+}
+
+
+/* Resuelta / activo */
+.resuelta {
+
+  background: #e3f6e4;
+
+  color: #31893e;
+}
+
+
+/* Visita programada */
+.programada {
+
+  background: #fff1d7;
+
+  color: #d18a00;
+}
+
+
+/* ======================================================
+   BOTONES DE ACCIÓN
+   ====================================================== */
+
+/*
+  Botones pequeños utilizados dentro
+  de las tablas.
+*/
+.btn-accion {
+
+  padding: 7px 10px;
+
+  border: none;
+
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  font-size: 12px;
+}
+
+
+/* Ver */
+.btn-accion.ver {
+
+  background: #eee7ff;
+
+  color: #7040d7;
+}
+
+
+/* Editar */
+.btn-accion.editar {
+
+  background: #fff2d9;
+
+  color: #a56800;
+
+  margin-left: 4px;
+}
+
+
+/* Eliminar */
+.btn-accion.eliminar {
+
+  background: #ffe5e5;
+
+  color: #c73636;
+
+  margin-left: 4px;
+}
+
+
+/* ======================================================
+   RESPONSIVE
+   ====================================================== */
+
+/*
+  Estas reglas se activan cuando
+  la pantalla mide 750px o menos.
+*/
+@media (max-width: 750px) {
+
+
+  /*
+    Ocultamos temporalmente el sidebar
+    en celulares.
+
+    Más adelante podemos crear
+    un menú hamburguesa.
+  */
+  .sidebar {
+
+    display: none;
+  }
+
+
+  /*
+    Como desapareció el sidebar,
+    el contenido utiliza todo el ancho.
+  */
+  .contenido {
+
+    width: 100%;
+  }
+
+
+  /* Reducimos espacio del header */
+  .header {
+
+    padding: 0 20px;
+  }
+
+
+  /* Reducimos espacio general */
+  .pagina-contenido {
+
+    padding: 25px 20px;
+  }
+
+
+  /*
+    Los formularios pasan de
+    dos columnas a una sola.
+  */
+  .form-grid {
+
+    grid-template-columns: 1fr;
+  }
+
+
+  .campo-completo {
+
+    grid-column: auto;
+  }
+
+
+  /*
+    Encabezado y botón pasan
+    uno debajo del otro.
+  */
+  .encabezado-pagina {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 20px;
+  }
+
+}
